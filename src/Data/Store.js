@@ -1,0 +1,1 @@
+export const AllUserDetails = JSON.parse(localStorage.getItem("userPrevDetails") || '[]');
