@@ -3,7 +3,7 @@ import { AllUserDetails } from "../Data/Store.js";
 
 const Dashboard = () => {
   // let styler = true;
-  
+
   if (AllUserDetails.length !== 0) {
     let lastReg = AllUserDetails[AllUserDetails.length - 1];
     lastReg.active = true;
@@ -14,7 +14,6 @@ const Dashboard = () => {
   const mapper = [
     { semester: ["longitude", "latitude"] },
     { semester: ["voodoo", "john"] },
-    { semester: ["Math"] },
   ];
 
   return (
@@ -43,7 +42,6 @@ const Dashboard = () => {
                         }}>
                         <span
                           id={index}
-                          // userD.active = !userD.active;
                           className={
                             userD.active ? "active" : "notactive"
                           }></span>
@@ -58,8 +56,8 @@ const Dashboard = () => {
             <div className="courses_box">
               <h3 className="heading">Courses</h3>
               <ul className="course_lists">
-                {mapper[actvclss] &&
-                  mapper[Number(actvclss) - 1].semester.map((each, index) => {
+                {mapper[actvclss -1] &&
+                  mapper[actvclss -1].semester.map((each, index) => {
                     return (
                       <li key={index}>
                         <h4>
